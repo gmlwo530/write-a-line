@@ -1,0 +1,105 @@
+import 'package:flutter/material.dart';
+import 'package:write_a_line/ListContainer.dart';
+import 'package:write_a_line/More.dart';
+import 'Home.dart';
+
+void main() => runApp(App());
+
+class App extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: BottomNavigation()
+    );
+  }
+}
+
+
+class BottomNavigation extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _BottomNavigationState();
+  }
+}
+
+class _BottomNavigationState extends State<BottomNavigation> {
+  int _currentIndex = 0;
+  final List<Widget> _children = [Home(), ListContainer(), More()];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
+        items: [
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home),
+            title: new Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.list),
+            title: new Text('List'),
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.more_horiz),
+              title: Text('More')
+          )
+        ],
+      ),
+    );
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+}
+
+
+//class RandomWordsState extends State<RandomWords>{
+//  final _suggestions = <WordPair>[];
+//  final _biggerFont = const TextStyle(fontSize: 18.0);
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text('Startup Name Generator'),
+//      ),
+//      body: _buildSuggestions(),
+//    );
+//  }
+//
+//  Widget _buildSuggestions(){
+//    return ListView.builder(
+//      padding: const EdgeInsets.all(16.0),
+//      itemBuilder: (context, i){
+//      if (i.isOdd) return Divider();
+//
+//      final index = i ~/ 2;
+//      if (index >= _suggestions.length) {
+//        _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+//      }
+//      return _buildRow(_suggestions[index]);
+//    });
+//  }
+//
+//  Widget _buildRow(WordPair pair) {
+//    return ListTile(
+//      title: Text(
+//        pair.asPascalCase,
+//        style: _biggerFont,
+//      ),
+//    );
+//  }
+//}
+//
+//class RandomWords extends StatefulWidget {
+//  @override
+//  RandomWordsState createState() => new RandomWordsState();
+//}
+
