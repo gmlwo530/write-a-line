@@ -2,7 +2,7 @@
 
 - This is simple memo app for AOS&IOS.
 
-- Using sqlite for saving memo.
+- Use sqlite for saving memo.
 
 - Create, Read and Delete memo.
 
