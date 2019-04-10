@@ -15,7 +15,6 @@ class ListContainer extends StatelessWidget {
 
 class ListState extends State<Lines>{
   final _biggerFont = const TextStyle(fontSize: 18.0);
-  final _smallerFont = const TextStyle(fontSize: 14.0);
   ListState();
 
   @override

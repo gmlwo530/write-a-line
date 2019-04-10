@@ -60,38 +60,7 @@ class BodyState extends State<Body> {
                   },
                   child: new Icon(Icons.create)
               ),
-
-//          new LinearProgressIndicator(
-//            key: new Key("Progress"),
-//            value: 0.1,
-//            backgroundColor: Colors.grey,
-//            valueColor: new AlwaysStoppedAnimation<Color>(Colors.lightBlue),
-//            semanticsLabel: "SEMANTIC LABEL",
-//            semanticsValue: "SEMANTIC VALUE",
-//          ),
         ],
     );
   }
-//  void _showDialog(String val) {
-//    showDialog(
-//        context: context,
-//        builder: (BuildContext context) {
-//          return new AlertDialog(
-//              title: new Text(val),
-//              actions: <Widget>[
-//                new FlatButton(
-//                    child: new Text('CANCEL'),
-//                    onPressed: () => Navigator.of(context).pop()
-//                ),
-//                new FlatButton(
-//                    child: new Text('OK'),
-//                    onPressed: () {
-//                      Navigator.of(context).pop();
-//                    }
-//                )
-//              ]
-//          );
-//        }
-//    );
-//  }
 }
